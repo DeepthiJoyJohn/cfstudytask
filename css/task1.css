@@ -1,0 +1,32 @@
+.textbox{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}       
+
+.submitbtn {
+  background-color: #3498db; 
+  color: #ffffff; 
+  border: none; 
+  padding: 10px 20px;
+  cursor: pointer;
+}
+label {
+    display: block; 
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px; 
+}
+.span{
+  font-weight: bold;
+  color: #ff6600; /* Text color */
+  font-weight: bold; /* Bold text */
+  background-color: #ffffcc; /* Background color */
+  padding: 3px 5px; /* Padding around the text */
+  border: 1px solid #ff6600; /* Border around the <span> */
+  border-radius: 4px;
+  margin-top:20px;
+}
