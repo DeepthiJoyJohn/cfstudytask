@@ -17,7 +17,7 @@
              <cfinvoke component="cfstudytask/Components/task3" method="fun_task3" returnvariable="task3result">
                 <cfinvokeargument name="textboxval" value="#form.textbox#">                     
              </cfinvoke><br> 
-             <cfoutput><span class="span">#task3result#</span></cfoutput>
+             <cfoutput>#task3result#</cfoutput>
         </cfif>
     </form>
 </html>

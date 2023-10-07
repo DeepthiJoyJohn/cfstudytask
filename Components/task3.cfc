@@ -1,30 +1,21 @@
 <cfcomponent>
-    <cffunction name="fun_task2" access="public">
+    <cffunction name="fun_task3" access="public">
 		<cfargument name="textboxval">
-		<cfset var result="">
-		<cfswitch expression="#arguments.textboxval#">
-			<cfcase value="5">
-				<cfset var result="5 is very good">
-			</cfcase>
-			<cfcase value="4">
-				<cfset var result="4 is good">
-			</cfcase>
-			<cfcase value="3">
-				<cfset var result="3 is fair">
-			</cfcase>
-			<cfcase value="2">
-				<cfset var result="1 & 2 is ok">
-			</cfcase>
-			<cfcase value="1">
-				<cfset var result="1 & 2 is ok">
-			</cfcase>
-			<cfcase value="">
-				<cfset var result="Please Enter Value in Textbox">
-			</cfcase>
-			<cfdefaultcase>
-				<cfset var result="Invalid Input">
-			</cfdefaultcase>
-		</cfswitch>
-		<cfreturn result>
+				<cfset arguments.textboxval = reReplace(arguments.textboxval, '["]+', '', 'all')>
+				<cfset local.numarray = listToArray(arguments.textboxval, ",")>
+				<cfset local.result="">
+				<cfset var pattern = "[##A-Za-z\@^&*()_+{}\[\]:;<>,.?~\\|!`$%=]">
+				<cfloop from="1" to="#ArrayLen(local.numarray)#" index="i">	
+						<cfif (reFind(pattern, local.numarray[i]) neq 0)>
+							<cfset local.result="Invalid Entryy">
+							<cfbreak>									
+						<cfelseif ArrayIsDefined(local.numarray, i) AND local.numarray[i]%3 neq 0>
+							<cfcontinue>
+						<cfelse>
+							<cfset local.result = local.result & local.numarray[i] & ','>						
+						</cfif>				
+				</cfloop>
+				<cfset local.result = left(local.result, len(local.result) - 1)> 
+		<cfreturn local.result>
     </cffunction>
 </cfcomponent>
