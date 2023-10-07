@@ -1,0 +1,40 @@
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.Monday{
+  color:green;
+}
+.Tuesday{
+  color:orange;
+}
+.Wednesday{
+  color:yellow;
+}
+.Thursday{
+  color:black;
+  font-weight: bold;
+}
+.Friday{
+  color:blue;
+}
+.Saturday{
+  color:red;
+  font-weight: bold;
+}
+.Sunday{
+  color:red;
+}
