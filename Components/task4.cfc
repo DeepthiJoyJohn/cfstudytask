@@ -22,14 +22,13 @@
 		</cfif>
 		<cfset local.firstdateofcurrentmonth = CreateDate(Year(Now()), Month(Now()), 01)>
 		<cfset local.firstdateofnextmonth = CreateDate(Year(Now()), Month(Now())+1, 01)>
-		<cfset daysDifference = DateDiff("d", local.firstdateofcurrentmonth, local.firstdateofnextmonth)>
-		
+		<cfset daysDifference = DateDiff("d", local.firstdateofcurrentmonth, local.firstdateofnextmonth)>		
 		<cfloop from="1" to="5" index="i">
 			<cfset local.lastdate=DateFormat(CreateDate(Year(Now()), Month(Now()), (daysDifference-i)),"dd-MMM-yyyy")>
 			<cfset local.lastday=DayOfWeekAsString(DayOfWeek(CreateDate(Year(Now()), Month(Now()), daysDifference-i)))>
 			<cfset local.daysstruct[local.lastday]= local.lastdate&'-'&local.lastday  >
-		</cfloop>
-		
+		</cfloop>		
 		<cfreturn local.daysstruct>
     </cffunction>
+	
 </cfcomponent>
