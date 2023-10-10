@@ -7,6 +7,7 @@
         <cfset application.structtask7={}>
         <cfset application.structtask8={}>
         <cfset application.structtask9={}>
+        <cfset application.structtask={}>
         <cfreturn true>
     </cffunction>
 
