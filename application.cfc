@@ -8,6 +8,7 @@
         <cfset application.structtask8={}>
         <cfset application.structtask9={}>
         <cfset application.structtask={}>
+        <cfset application.datasoursename="cftasksnew">
         <cfreturn true>
     </cffunction>
 
