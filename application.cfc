@@ -4,8 +4,8 @@
     <cfset this.sessionManagement = true> 
     <cfset this.sessionTimeout = createTimeSpan(0, 0, 60, 0)> 
     <cffunction name="onApplicationStart" returnType="boolean" output="false">
-        <cfset application.structtask7={}>
-        <cfset application.structtask8={}>
+       
+        
         <cfset application.structtask9={}>
         <cfset application.structtask={}>
         <cfset application.datasoursename="cftasksnew">
@@ -13,7 +13,8 @@
     </cffunction>
 
     <cffunction name="onSessionStart" returnType="boolean" output="false">
-        <cfset session.mySessionVar = "Welcome to the session!">
+        <cfset session.structtask7 = {}>
+        <cfset session.structtask8={}>
         <cfreturn true>
     </cffunction>    
 

@@ -3,7 +3,7 @@
 		<cfargument name="textboxval1">
 		<cfargument name="textboxval2">
 		<cfset local.struct = StructNew()>
-		<cfif arguments.textboxval1 NEQ "" AND arguments.textboxval2 NEQ "">
+		<cfif len((trim(arguments.textboxval1))) NEQ 0 AND len((trim(arguments.textboxval2))) NEQ 0>
 			<cfset value=StructInsert(local.struct, "#arguments.textboxval1#", "#arguments.textboxval2#")> 
 			<cfreturn local.struct>
 		<cfelse>         	

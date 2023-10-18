@@ -22,7 +22,7 @@
         <div class="submitdiv">
             <button class="submitbtn" type="Submit" name="submitbtn">Submit</button>
         </div>
-        <cfif IsDefined("form.submitbtn") and IsDefined("form.dobuser") and IsDefined("form.dobmother")>
+        <cfif StructKeyExists(form,"submitbtn") and StructKeyExists(form,"dobuser") and StructKeyExists(form,"dobmother")>
             <cfinvoke component="cfstudytask/Components/task5" method="fun_task5" returnvariable="task5result">
                 <cfinvokeargument name="dobuser" value="#form.dobuser#">
                 <cfinvokeargument name="dobmother" value="#form.dobmother#">                                          

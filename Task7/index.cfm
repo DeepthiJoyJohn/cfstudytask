@@ -25,12 +25,12 @@
         <div class="submitdiv">
             <button class="submitbtn" type="Submit" name="submitbtn">Submit</button>
         </div>
-        <cfif IsDefined("form.submitbtn") and IsDefined("form.textbox1") and IsDefined("form.textbox2")>
-             <cfinvoke component="cfstudytask/Components/task7" method="fun_task7" returnvariable="task7result">
+        <cfif StructKeyExists(form,"submitbtn") and StructKeyExists(form,"textbox1") and StructKeyExists(form,"textbox2")>
+            <cfinvoke component="cfstudytask/Components/task7" method="fun_task7" >
                 <cfinvokeargument name="textboxval1" value="#form.textbox1#">
                 <cfinvokeargument name="textboxval2" value="#form.textbox2#">                                          
-             </cfinvoke><br> 
-             <cfdump var="#task7result#">
+            </cfinvoke><br> 
+            <cfdump var="#session.structtask7#">
         </cfif>
     </form>
 </html>
