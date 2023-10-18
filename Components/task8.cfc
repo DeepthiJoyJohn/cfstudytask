@@ -2,14 +2,10 @@
     <cffunction name="fun_task8" access="public">
 		<cfargument name="textboxval1">
 		<cfargument name="textboxval2">	
-		<cfif StructKeyExists(application.structtask8, "#arguments.textboxval1#")>
-			<cfset application.structtask8["#arguments.textboxval1#"] = "#arguments.textboxval2#">
-			<cfreturn application.structtask8>			
-		<cfelseif arguments.textboxval1 EQ "" OR arguments.textboxval2 EQ "">	
-			<cfreturn "Key And Value Cant be Null!!!">
+		<cfif StructKeyExists(session.structtask8, "#arguments.textboxval1#")>
+			<cfset session.structtask8["#arguments.textboxval1#"] = "#arguments.textboxval2#">		
 		<cfelse>
-			<cfset value=StructInsert(application.structtask8, "#arguments.textboxval1#", "#arguments.textboxval2#")>			
-			<cfreturn application.structtask8>
+			<cfset value=StructInsert(session.structtask8, "#arguments.textboxval1#", "#arguments.textboxval2#")>
 		</cfif>
     </cffunction>
 </cfcomponent>

@@ -11,9 +11,9 @@
     </cffunction>
 	<cffunction name="fun_task12sub" access="public">
 		<cfquery name="qry_selectentry" datasource="#application.datasoursename#">
-				SELECT *
-				FROM user
-				WHERE 1
+			SELECT *
+			FROM user
+			WHERE 1
 		</cfquery>
 		<cfreturn qry_selectentry>
 	</cffunction>

@@ -14,12 +14,12 @@
         </div><br>
         <div class="submitdiv">
             <button class="submitbtn" type="Submit" name="submitbtn">Submit</button>
-        </div>
-        <cfif IsDefined("form.submitbtn") and IsDefined("form.textbox")>
-             <cfinvoke component="cfstudytask/Components/task1" method="fun_task1" returnvariable="task1result">
-                <cfinvokeargument name="textboxval" value="#form.textbox#">                     
-             </cfinvoke> <br>
-             <cfoutput><span class="span">#task1result#</span></cfoutput>
-        </cfif>
+        </div>        
     </form>
+    <cfif StructKeyExists(form,"submitbtn") and StructKeyExists(form,"textbox")>
+        <cfinvoke component="cfstudytask/Components/task1" method="fun_task1" returnvariable="task1result">
+        <cfinvokeargument name="textboxval" value="#form.textbox#">                     
+        </cfinvoke> <br>
+        <cfoutput><span class="span">#task1result#</span></cfoutput>
+    </cfif>
 </html>
