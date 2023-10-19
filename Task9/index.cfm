@@ -25,12 +25,18 @@
         <div class="submitdiv">
             <button class="submitbtn" type="Submit" name="submitbtn">Submit</button>
         </div>
-        <cfif IsDefined("form.submitbtn") and IsDefined("form.textbox1") and IsDefined("form.textbox2")>
-             <cfinvoke component="cfstudytask/Components/task9" method="fun_task9" returnvariable="task9result">
+        <cfif StructKeyExists(form,"submitbtn") and StructKeyExists(form,"textbox1") and StructKeyExists(form,"textbox2")>
+            <cfinvoke component="cfstudytask/Components/task9" method="fun_task9" returnvariable="task9result">
                 <cfinvokeargument name="textboxval1" value="#form.textbox1#">
                 <cfinvokeargument name="textboxval2" value="#form.textbox2#">                                          
-             </cfinvoke><br> 
-             <cfdump var="#task9result#">
+            </cfinvoke><br> 
+            <cfif task9result EQ "Cannot Add">
+                <cfoutput>Key Already Present Cannot Add Again</cfoutput>
+            <cfelseif task9result EQ "Key Null">
+                <cfoutput>Key Cannot be Null</cfoutput>    
+            <cfelse>
+                <cfdump var="#session.structtask9#">
+            </cfif>
         </cfif>
     </form>
 </html>
