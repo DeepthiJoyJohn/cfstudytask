@@ -1,7 +1,7 @@
 <cfcomponent>
     <cffunction name="fun_task12" access="public">
 		<cfargument name="textbox">
-		<cfif arguments.textbox EQ "">
+		<cfif len((trim(arguments.textbox))) EQ 0>
 			<cfreturn 0>
 		<cfelseif (isValid("integer", arguments.textbox))>			
 			<cfreturn 1>

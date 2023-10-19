@@ -15,6 +15,7 @@
     <cffunction name="onSessionStart" returnType="boolean" output="false">
         <cfset session.structtask7 = {}>
         <cfset session.structtask8={}>
+        <cfset session.structtask9={}>
         <cfreturn true>
     </cffunction>    
 
