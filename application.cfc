@@ -4,10 +4,6 @@
     <cfset this.sessionManagement = true> 
     <cfset this.sessionTimeout = createTimeSpan(0, 0, 60, 0)> 
     <cffunction name="onApplicationStart" returnType="boolean" output="false">
-       
-        
-        <cfset application.structtask9={}>
-        <cfset application.structtask={}>
         <cfset application.datasoursename="cftasksnew">
         <cfreturn true>
     </cffunction>
@@ -16,6 +12,8 @@
         <cfset session.structtask7 = {}>
         <cfset session.structtask8={}>
         <cfset session.structtask9={}>
+        <cfset session.structtask10={}>
+        <cfcookie name = "VisitsCounter" value="1">
         <cfreturn true>
     </cffunction>    
 

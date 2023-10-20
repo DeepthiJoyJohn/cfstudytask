@@ -1,4 +1,3 @@
-<!--- Please insert your code here --->
 <html>
     <head>       
         <link rel="stylesheet" href="../css/task1.css">       

@@ -10,7 +10,7 @@
 			<cfset var result="3 is fair">
 		<cfelseif (arguments.textboxval eq 2) or (arguments.textboxval eq 1)>
 			<cfset var result="1 & 2 is ok">
-		<cfelseif (arguments.textboxval eq "")>
+		<cfelseif (len((trim(arguments.textboxval))) eq 0)>
 			<cfset var result="Please Enter Value in Text Box">
 		<cfelse>
 			<cfset var result="Invalid Input">

@@ -20,10 +20,10 @@
             <button class="submitbtn" type="Submit" name="submitbtn">Submit</button>
         </div>
         <cfif StructKeyExists(form,"submitbtn") and StructKeyExists(form,"textbox1") and StructKeyExists(form,"textbox2")>
-             <cfinvoke component="cfstudytask/Components/task6" method="fun_task6" returnvariable="task6result">
+            <cfinvoke component="cfstudytask/Components/task6" method="fun_task6" returnvariable="task6result">
                 <cfinvokeargument name="textboxval1" value="#form.textbox1#">
                 <cfinvokeargument name="textboxval2" value="#form.textbox2#">                                          
-             </cfinvoke><br> 
+            </cfinvoke><br> 
              <cfdump var="#task6result#">
         </cfif>
     </form>

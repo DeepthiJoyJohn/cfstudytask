@@ -30,5 +30,4 @@
 		</cfloop>		
 		<cfreturn local.daysstruct>
     </cffunction>
-	
 </cfcomponent>
