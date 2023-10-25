@@ -14,8 +14,6 @@
         <cfset task16obj = createObject("component", "cfstudytask.Components.task16")>
         <cfset res = task16obj.task16()>
         <cfoutput>#res#</cfoutput>
-        
-            
     </form>
     </body>
 </html>

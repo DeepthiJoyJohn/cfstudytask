@@ -2,7 +2,7 @@
     <head>       
         <link rel="stylesheet" href="../css/task1.css">    
         <link rel="stylesheet" href="../css/task4.css">
-        <script src="../js/task20.js"></script>
+        <script src="../js/task21.js"></script>
     </head>
     <body>
         <h2>TASK-20</h2>
@@ -15,7 +15,7 @@
             While clicking on the submit, it should send greeting mail to the birthday guy’s mail id. 
             Greeting images should be in attachment along with mail.
         </h3>
-        <form name="form" id="form" action="" method="post" onsubmit="return validate()">           
+        <form name="form" id="form" action="" method="post" enctype="multipart/form-data" onsubmit="return validate()">           
             
             <div>
                 <label>Birthday Baby Name</label>
@@ -36,7 +36,7 @@
             <div>
             <div>
                 <textarea name="bdaywish" id="bdaywish"></textarea>
-                <span  class="errorspan" id="errorbdaywish"></span> 
+                <span  class="errorspan" id="errorbdawish"></span> 
             </div>
             <div>
                 <label>Upload Image</label>
@@ -50,11 +50,13 @@
             </div>           
         </form>
         <cfif StructKeyExists(form,"Submitbtn")> 
-            <cfinvoke component="cfstudytask/Components/task20" method="task20" returnvariable="result20">
-                <cfinvokeargument name="captcha" value="#form.captcha#">
+            <cfinvoke component="cfstudytask/Components/task21" method="task21" returnvariable="result21">
+                <cfinvokeargument name="name" value="#form.name#">
                 <cfinvokeargument name="email" value="#form.email#">
+                <cfinvokeargument name="bdaywish" value="#form.bdaywish#">
+                <cfinvokeargument name="filename" value="#form.filename#">
             </cfinvoke>
-            <cfoutput>#result20#</cfoutput>
+            <cfdump var="#cffile#">
         </cfif> 
     </body>
 </html>

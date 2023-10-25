@@ -3,6 +3,7 @@ function validate(){
   var name = document.getElementById('name').value; 
   var email = document.getElementById('email').value; 
   var bdaywish = document.getElementById('bdaywish').value;
+  
   var filename = document.getElementById('filename').value;
   var errorname = document.getElementById('errorname');
   var errorbdawish = document.getElementById('errorbdawish');
@@ -15,7 +16,7 @@ function validate(){
   }else if (reg.test(email) == false){
     erroremail.textContent = 'Invalid Email'; 
     return false;
-  }else if (emailbdaywish == ""){
+  }else if (bdaywish == ""){
     errorbdawish.textContent = 'Cant be Empty'; 
     return false;
   }else if (filename == ""){
@@ -24,6 +25,8 @@ function validate(){
   }else {
     errortext.textContent = ''; 
     erroremail.textContent = ''; 
+    errorbdawish.textContent = '';
+    errorimage.textContent = ''; 
     return true;
   }
 }
