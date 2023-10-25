@@ -1,0 +1,89 @@
+html {
+  background-image: none;
+  background-color: #669900;
+}
+h1 {
+  display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+#logo {
+  background-image: none;
+  background-color: #99cc00;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  background-color: #dedede;
+  text-decoration: none;
+  text-indent: -9000px;
+}
+#logo a{
+  height: 80px;
+  display: block;
+  background: url(../../../../images/wflogo-padding.png) no-repeat left top;
+  overflow: hidden;
+}
+#container {
+  border: 0 solid #cccccc;
+}
+#container, html.embed {
+  background-color: #FFFFFF;
+}
+#container {
+  margin: 0 auto 10px auto;
+  width: 640px;
+}
+#container {
+  text-align: left;
+  background: #fff;
+  border: 1px solid #ccc;
+  -o-box-shadow: rgba(0,0,0,0.2) 0px 0px 5px;
+  box-shadow: rgba(0,0,0,0.2) 0px 0px 5px;
+}
+a:-webkit-any-link:active {
+  color: -webkit-activelink;
+}
+#logo a {
+  height: 80px;
+  display: block;
+  background: url(../../../../images/wflogo-padding.png) no-repeat left top;
+  overflow: hidden;
+}
+a:-webkit-any-link:active {
+  color: -webkit-activelink;
+}
+form span.req {
+  display: inline;
+  float: none;
+  color: red !important;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+input.medium, select.medium {
+  width: 50%;
+}
+.wufoo {
+  font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+  letter-spacing: .01em;
+}
+form.wufoo {
+  margin: 20px 14px 0 14px;
+  padding: 0 0 20px 0;
+  position: relative;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
