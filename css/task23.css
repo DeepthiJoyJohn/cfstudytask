@@ -10,23 +10,18 @@ h1 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    text-align: left;
 }
 #logo {
-  background-image: none;
   background-color: #99cc00;
   margin: 0;
   padding: 0;
   min-height: 0;
-  background-color: #dedede;
   text-decoration: none;
-  text-indent: -9000px;
+  
+  height:100px;
 }
-#logo a{
-  height: 80px;
-  display: block;
-  background: url(../../../../images/wflogo-padding.png) no-repeat left top;
-  overflow: hidden;
-}
+
 #container {
   border: 0 solid #cccccc;
 }
@@ -85,5 +80,11 @@ form.wufoo {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+.radio{
+  display: flex;
+}
+.symbol{
+  margin:20px;
 }
 
