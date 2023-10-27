@@ -17,11 +17,12 @@
             <h1 id="logo">
                 <img src="https://static.wufoo.com/images/wflogo-padding.png">
             </h1>
-            <form class="wufoo" enctype="multipart/form-data" onsubmit="return validate()">  
+            <form  name="form" id="form" action="" method="post" class="wufoo" enctype="multipart/form-data" onsubmit="return validate()">  
                 <header id="header" class="info">
                     <h2 class="">Employment Application</h2>
                     <div class="">Infinity Box Inc.</div>
                 </header>
+                
                 <label>
                     Which position are you applying for?
                     <span class="req">*</span>
@@ -42,53 +43,40 @@
                         Office Manager
                     </option>
                 </select>
-                <span class="errorspan" id="errorname"></span>
+                <span class="errorspan1" id="errorname"></span>
                 <legend id="title19">
                     Are you willing to relocate?
                     <span  class="req">*</span>
                 </legend>
                 <span class="radio">
-                    <input id="yes" name="yes" type="radio" value="Yes" tabindex="0">
+                    <input id="yes" name="radio" type="radio" value="Yes">
                     <label>
                         Yes
                     </label>
-                    <input id="no" name="no" type="radio" value="No" tabindex="0" >
+                    <input id="no" name="radio" type="radio" value="No">
                     <label>
                         No
                     </label>
+                    <button onclick = "clearRadio()"> Uncheck Radio </button>
                 </span>
                 <span class="errorspan" id="errorradio"></span>
                 <label>
                     When can you start?
                     <span class="req">*</span>
                 </label>
-                <span class="radio">                        
-                    <!--<input id="Field20-1" name="Field20-1" type="text"  value="" size="2" maxlength="2" tabindex="0">
-                    <span>/</span>
-                    <input id="Field20-2" name="Field20-2" type="text" value="" size="2" maxlength="2" tabindex="0">
-                    <span>/</span>
-                    <input id="Field20" name="Field20" type="text"  value="" size="4" maxlength="4" tabindex="0">-->
-                    <input type="date" id="startdate" name="startdate">
-                    <!--<img src="https://static.wufoo.com/images/icons/calendar.png" alt="Pick a date." data-date-format="yyyy-mm-dd" data-date="today">-->                                               
-                </span>
-                <!--<span class="radio">
-                    <label>DD</label>
-                    <span class="symbol"></span>
-                    <label>MM</label>
-                    <span class="symbol"></span>		                
-                    <label>YYYY</label>
-                </span>-->
+                <input id="startdate" name="startdate" type="date" value="">
+                 <span class="errorspan" id="errorstartdate"></span>
                 <label>
                     Portfolio Web Site
                 </label>
                 <div>
-                    <input id="Field14" name="Field14"  value="http://" maxlength="255" tabindex="0" placeholder="">
+                    <input id="website" name="website"  value="http://" maxlength="255">
                 </div>
                 <label>
                     Attach a Copy of Your Resume
                 </label>
                 <div>
-                    <input id="Field12" name="Field12" type="file" class="field file" size="12" data-file-max-size="10" tabindex="0">
+                    <input id="resume1" name="resume1" type="file"  size="12">
                 </div>
                 <p>
                     <small>Word or PDF Documents Only</small>
@@ -98,9 +86,9 @@
                 </label>
                 <span class="radio">
                     $
-                    <input id="Field16" name="Field16" type="text" value="" size="10" tabindex="0">
+                    <input id="dollar" name="dollar" type="text" value="" size="10" tabindex="0"  oninput="this.value=this.value.replace(/[^0-9]/g, '');" maxlength="4">
                     <span>.</span>
-                    <input id="Field16-1" name="Field16-1" type="text" class="field text nospin" value="" size="2" maxlength="2" tabindex="0" oninput="this.value=this.value.replace(/[^0-9]/g, ''); handleInput(this);">
+                    <input id="cents" name="cents" type="text"  value="" size="2" maxlength="2" tabindex="0" oninput="this.value=this.value.replace(/[^0-9]/g, '');"  maxlength="2">
                 </span>
                 <span class="radio">
                     <span class="symbol"></span>
@@ -117,32 +105,36 @@
                         <span class="req">*</span>
                     </label>
                     <span>
-                        <input id="Field22" name="Field22" type="text"  value="" size="8" tabindex="0">
-                        <input id="Field23" name="Field23" type="text" class="field text ln" value="" size="14" tabindex="0" placeholder="">		                    
+                        <input id="firstname" name="firstname" type="text"  value="" size="8" >
+                        <input id="lastname" name="lastname" type="text" value="" size="14">
+                    </span>
+                    <span>
+                        <span class="errorspan" id="errorfirstname"></span>
                     </span>
                     <span class="radio">
                         <span class="symbol"></span>
-                        <label for="Field22">First</label>
+                        <label>First</label>
                         <span class="symbol"></span>
-                        <label for="Field23">Last</label>
+                        <label>Last</label>
                     </span>
-                    <label class="desc" id="title13" for="Field13">
+                    <label class="desc" id="title13">
                         Email Address
                         <span id="req_13" class="req">*</span>
                     </label>
-                    <input id="Field13" name="Field13" type="email" spellcheck="false" class="field text large" value="" maxlength="255" tabindex="0" onkeyup="handleInput(this);" onchange="handleInput(this);" placeholder="">
+                    <input id="email" name="email" type="email" value="" maxlength="255">
+                    <span class="errorspan" id="erroremail"></span>
                     <label>
                         Phone
                         <span id="req_25" class="req">*</span>
                     </label>
                     <span class="radio">
-                        <input id="Field25" name="Field25" type="tel" value="" size="3" maxlength="3" tabindex="0" placeholder="">
+                        <input id="phone1" name="phone1" type="tel" value="" size="3" maxlength="3">
                         <span>-</span>
-                        <input id="Field25-1" name="Field25-1" type="tel"  value="" size="3" maxlength="3" tabindex="0" placeholder="">
+                        <input id="phone2" name="phone2" type="tel"  value="" size="3" maxlength="3">
                         <span>-</span>
-                        <input id="Field25-2" name="Field25-2" type="tel"  value="" size="4" maxlength="4" tabindex="0" placeholder="">
-                        
+                        <input id="phone3" name="phone3" type="tel"  value="" size="4" maxlength="4">
                     </span>
+                    <span class="errorspan" id="errorphone"></span>
                     <span class="radio">
                         <label>###</label>
                         <span class="symbol"></span>
@@ -150,9 +142,17 @@
                         <span class="symbol"></span>
                         <label>####</label>
                     </span>                        
-                    <input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" onmousedown="doSubmitEvents();">
-                </section>            
+                    <input type="Submit" class="submitbtn" name="Submitbtn" value="Submit">
+                </section> 
+                        
             </form>
+            <cfif StructKeyExists(form,"Submitbtn")> 
+                <cfinvoke component="cfstudytask/Components/task23" method="task23" returnvariable="result23">
+                <cfinvokeargument name="form" value="#form#">
+                
+            </cfinvoke>
+                <cfoutput>#result23#</cfoutput>
+            </cfif> 
         </div>
         <style type="text/css">
             @import url(https://static.wufoo.com/stylesheets/ads/css/power.0688.css);
