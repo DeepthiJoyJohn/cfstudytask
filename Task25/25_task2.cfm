@@ -43,10 +43,21 @@
                             - climate(1)
                             - states (1)                    
                 </h3>
-                <cfset obj = createObject("component", "cfstudytask.Components.tagCloud")>
-                <cfset struct=obj.fromdb()>
-                
-                 <cfdump var="#session.sortedstructure#">    
+                <cfinvoke component="cfstudytask/Components/tagCloud" method="fromdb" returnvariable="result25">
+                <cfoutput>
+                    <table>
+                        <tr>
+                            <td><b>Words</b></td>
+                            <td><b>occurence</b></td>
+                        </tr>
+                        <cfloop query="#result25#">
+                                <tr>
+                                    <td>#result25.words#</td>
+                                    <td>#session.mystructure[result25.words]#</td>
+                                </tr>
+                        </cfloop>
+                    </table>
+                </cfoutput> 
             </form> 
         </body>
     </html>

@@ -36,12 +36,13 @@
                 </div>
                 <div class="submitdiv"><br>
                     <button class="submitbtn" type="submit" name="submitbtn">Submit</button>
-                </div>   
+                </div>
+                 <cfset obj = createObject("component", "cfstudytask.Components.tagCloud")> 
+                <cfset delete=obj.cleardb()>  
                 <cfif StructKeyExists(form,"submitbtn")>
-                    <cfset obj = createObject("component", "cfstudytask.Components.tagCloud")>
                     <cfset struct=obj.setstructure(#form.textarea#)>
-                    <cfdump var="#struct#">
-                     <cfdump var="#session.mystructure#">
+                    <cfdump var="#session.mystructure#">
+                    
                 </cfif> 
             </form> 
         </body>
