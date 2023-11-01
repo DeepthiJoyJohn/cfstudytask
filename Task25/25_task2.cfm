@@ -45,7 +45,6 @@
                 </h3>
                 <cfset obj = createObject("component", "cfstudytask.Components.tagCloud")>
                 <cfset struct=obj.fromdb()>
-                
                  <cfdump var="#session.sortedstructure#">    
             </form> 
         </body>
