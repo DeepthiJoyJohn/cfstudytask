@@ -7,11 +7,19 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>       
     </head>
     <body>
-        <form>
+        <form action="welcome.cfm" method="post">
+            <cfif NOT isDefined("session.username")>
+                <cflocation url="index.cfm">
+            </cfif> 
             <center>
                 <img src="../Images/backgrd.jpg">
             </center> 
-            <button class="button" type="button" onclick="logout()">Logout</button>
+            <button class="button" type="submit" name="submitbtn">Logout</button>
         </form>
+        <cfif StructKeyExists(form,"submitbtn")>
+            <cfset StructDelete(session, "username")>
+            <cflocation url="index.cfm">
+
+        </cfif>
     </body>
 </html>

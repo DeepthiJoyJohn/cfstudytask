@@ -36,6 +36,7 @@
                         <cfinvokeargument name="password" value="#form.password#">
                     </cfinvoke> 
                     <cfif result27 EQ "1">
+                        <cfset session.username="#form.username#">
                         <cflocation url="welcome.cfm">
                     <cfelse>
                         <cfoutput><span class="errorspan">Wrong Credendials!!!!</span></cfoutput>

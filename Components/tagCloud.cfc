@@ -45,5 +45,29 @@
 			WHERE 
 			1
 		</cfquery>
-	</cffunction>		
+	</cffunction>	
+
+	<cffunction name="readfromupload" access="public">
+	    <cfargument name="fileUpload">		
+		<cfset local.absolutePath = expandPath("..\Images")>
+		<cffile action="upload" filefield="fileUpload" destination="#local.absolutePath#" accept="text/plain,text/csv" nameconflict="overwrite">
+		<cffile action="read" file="#local.absolutePath#/#CLIENTFILE#" variable="fileContent">
+		<cfset local.string = Replace(fileContent, ".", " ", "ALL")>
+		<cfset session.mystructure = {}>
+		<cfset local.wordsArray = ListToArray(#local.string#, " ")>
+		<cfloop array="#local.wordsArray#" index="i">
+			<cfif NOT StructKeyExists(session.mystructure, "#i#")>            	
+				<cfif NOT IsNumeric(i) AND LEN(i) GT 2>
+					<cfset session.mystructure[i] = 1>
+					<cfquery name="insertword" datasource="#application.datasoursename#">
+						INSERT
+						INTO words (words)
+						VALUES (<cfqueryparam value="#i#" cfsqltype="CF_SQL_varchar">)
+					</cfquery>
+				</cfif>
+			<cfelse>
+				<cfset session.mystructure[i] = session.mystructure[i] + 1>
+        	</cfif>  
+		</cfloop>
+	</cffunction>	
 </cfcomponent>
