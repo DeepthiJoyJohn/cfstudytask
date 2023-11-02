@@ -16,7 +16,11 @@
         <cfcookie name = "VisitsCounter" value="1">
         <cfreturn true>
     </cffunction>    
-
+    <cffunction name="onRequestStart" returnType="void" output="false">
+        <cfif CGI.SCRIPT_NAME EQ "welcome.cfm">
+            <cflocation url="index.cfm">
+        </cfif>        
+    </cffunction>
     <cffunction name="onRequestEnd" returnType="void" output="false">
         
     </cffunction>

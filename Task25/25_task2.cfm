@@ -43,6 +43,7 @@
                             - climate(1)
                             - states (1)                    
                 </h3>
+<<<<<<< HEAD
                 <cfinvoke component="cfstudytask/Components/tagCloud" method="fromdb" returnvariable="result25">
                 <cfoutput>
                     <table>
@@ -58,6 +59,11 @@
                         </cfloop>
                     </table>
                 </cfoutput> 
+=======
+                <cfset obj = createObject("component", "cfstudytask.Components.tagCloud")>
+                <cfset struct=obj.fromdb()>
+                 <cfdump var="#session.sortedstructure#">    
+>>>>>>> 3487c16dc090130b51a2eaf0b65e8a530c6d3f1f
             </form> 
         </body>
     </html>
