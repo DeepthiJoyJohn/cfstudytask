@@ -2,6 +2,7 @@
     <head>       
         <link rel="stylesheet" href="../css/task1.css">    
         <link rel="stylesheet" href="../css/task4.css"> 
+        <link rel="stylesheet" href="../css/task25.css"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">                      
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>       
     </head>
@@ -24,24 +25,10 @@
                         Columns accepts only unique values
                         Table DOES NOT have a primary key
                     Task:                   
-                    2. Write another cfm page, that retrieves the records from database and tells the total number of times a word is present,
-                        * Words with length less than 3 are not counted.
-                        * Numbers are not counted and saved into the database.
-                        * Result should be in decreasing order of the count of words
-                        * Result should be in decreasing order of length of the text
-                        * Result should be in alphabetical order
-                        Ex: India is huge country. India has 29 states. Indians are nice. It has a nice climate.
-                        Should return 
-                        
-                            - India (2)
-                            - nice (2)
-                            - has (2)
-                            - country (1)
-                            - Indians (1)
-                            - huge (1)		 
-                            - are (1)
-                            - climate(1)
-                            - states (1)                    
+                        Tag cloud: Write another cfm page, this is enhancement of task 2
+	                    Depending on the number of times a word is present in the given text, the size of the word should be increased. 
+	                    Hint: Use relative font sizes from CSS properties.
+	                    Bonus Point: Use different colors.
                 </h3>
                 <cfinvoke component="cfstudytask/Components/tagCloud" method="fromdb" returnvariable="result25">
                 <cfoutput>
@@ -52,8 +39,8 @@
                         </tr>
                         <cfloop query="#result25#">
                                 <tr>
-                                    <td>#words#</td>
-                                    <td>#countofstring#</td>
+                                    <td><span class="class#countofstring#">#words#</span></td>
+                                    <td><span class="class#countofstring#">#countofstring#</span></td>
                                 </tr>
                         </cfloop>
                     </table>
