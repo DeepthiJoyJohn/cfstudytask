@@ -21,7 +21,7 @@
 			<cfquery name="insertword" datasource="#application.datasoursename#">
 				INSERT
 				INTO words (words)
-				VALUES (<cfqueryparam value="#word##session.mystructure[word]#" cfsqltype="CF_SQL_varchar">)
+				VALUES (<cfqueryparam value="#word# #session.mystructure[word]#" cfsqltype="CF_SQL_varchar">)
 			</cfquery>
 		</cfloop>
 		<cfreturn "Records inserted to db">
@@ -29,10 +29,10 @@
 
 	<cffunction name="fromdb" access="public">
 		<cfquery name="selectwords" datasource="#application.datasoursename#">
-			SELECT RIGHT(words, 1) AS countofstring,SUBSTRING(words, 1, (CHAR_LENGTH(words) - 1)) AS words
+			SELECT SUBSTRING_INDEX(words, ' ', 1)  AS words,SUBSTRING_INDEX(words, ' ', -1) AS countofstring
 			FROM
 			words			 
-			ORDER BY countofstring DESC,CHAR_LENGTH(words) DESC,words ASC
+			ORDER BY ABS(countofstring) DESC,CHAR_LENGTH(words) DESC,words ASC
 		</cfquery>
 		<cfreturn selectwords>		
 	</cffunction>

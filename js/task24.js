@@ -19,7 +19,7 @@ function checkdatabase(){
         type: "POST",
         url: '../Components/task24.cfc?method=task24&name='+name+'&email='+email,
         cache: false,
-        success: function(data){          
+        success: function(data){  
           var stringValue = extractStringFromWDDX(data);
           if(stringValue=="1"){
             errorspan.textContent="Email Id Already Present!!";
