@@ -37,11 +37,28 @@
                 <div class="submitdiv"><br>
                     <button class="submitbtn" type="submit" name="submitbtn">Submit</button>
                 </div>
-                <cfset obj = createObject("component", "cfstudytask.Components.tagCloud")> 
-                <cfset delete=obj.cleardb()>  
+                <!---<cfset delete=obj.cleardb()>--->  
                 <cfif StructKeyExists(form,"submitbtn")>
-                    <cfset struct=obj.setstructure(#form.textarea#)>
-                    <cfdump var="#session.mystructure#">
+                    <cfset local.obj = new cfstudytask.Components.tagCloud(#form.textarea#)>
+                    <cfoutput>
+                        <table>
+                            <tr>
+                                <td colspan="2">Stucture Returned by Constructor</td>
+                            </tr>
+                            <tr>
+                                <td>Key(Word)</td>
+                                <td>Value(Occurence)</td>
+                            </tr>
+                            <cfloop collection="#local.obj#" item="key"> 
+                                <tr>
+                                    <td>#key#</td>
+                                    <td>#local.obj[key]#</td>
+                                </tr>
+                            </cfloop>
+                        </table> 
+                    </cfoutput>
+                    <cfset local.insertToDatabase=obj.insertToDatabase(#form.textarea#)>
+                    
                 </cfif> 
             </form> 
         </body>
