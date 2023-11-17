@@ -29,11 +29,25 @@
                 
                 
             </form>
+            <cfinvoke component="cfstudytask/Components/tagCloud" method="cleardb">
             <cfif StructKeyExists(form,"submitbtn") AND form.fileUpload NEQ "">
-                <cfinvoke component="cfstudytask/Components/tagCloud" method="readfromupload">
+                <cfinvoke component="cfstudytask/Components/tagCloud" method="readFromUpload" returnvariable="result">
                     <cfinvokeargument name="fileUpload" value="#form.fileUpload#"> 
                 </cfinvoke>
-                <cfdump var="#session.mystructure#">
+                <cfoutput>
+                    <table>
+                        <tr>
+                            <td><b>Words</b></td>
+                            <td><b>occurence</b></td>
+                        </tr>
+                        <cfloop query="#result#">
+                                <tr>
+                                    <td><span class="class#countofstring#">#words#</span></td>
+                                    <td><span class="class#countofstring#">#countofstring#</span></td>
+                                </tr>
+                        </cfloop>
+                    </table>                    
+                </cfoutput> 
             </cfif>  
         </body>
     </html>

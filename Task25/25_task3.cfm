@@ -30,7 +30,7 @@
 	                    Hint: Use relative font sizes from CSS properties.
 	                    Bonus Point: Use different colors.
                 </h3>
-                <cfinvoke component="cfstudytask/Components/tagCloud" method="fromdb" returnvariable="result25">
+                <cfinvoke component="cfstudytask/Components/tagCloud" method="readingFromDb" returnvariable="result25">
                 <cfoutput>
                     <table>
                         <tr>

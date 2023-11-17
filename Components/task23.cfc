@@ -1,5 +1,5 @@
 <cfcomponent>   
-	<cffunction name="task23" access="public">
+	<cffunction name="task23" access="public" returntype="text">
 		<cfargument name="form">
 		<cfset local.filepath=ExpandPath("..\Resumes\")>
 		<cfset local.filename="">
@@ -26,5 +26,12 @@
 				 <cfqueryparam value="#local.phone#" cfsqltype="CF_SQL_varchar">)
         </cfquery> 
 		<cfreturn "Data saved Successfully">
+	</cffunction>
+	<cffunction name="getPosition" access="public" returntype="query">
+		<cfquery name="qToGetPosition" datasource="#application.datasoursename#">
+			SELECT * 
+			FROM position
+		</cfquery>
+		<cfreturn qToGetPosition>
 	</cffunction>	
 </cfcomponent>

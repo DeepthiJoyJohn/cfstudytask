@@ -1,0 +1,544 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs28\lang9 Question\fs32 : C Language\par
+\fs22 Question:1(wht's the output)\fs32\par
+\b0\fs22 #include <stdio.h>\par
+int main()\par
+\{\par
+\tab int arr[]=\{10,20,30,40,50\};\par
+\tab int n;\par
+\tab n=sizeof(arr)/sizeof(int);\par
+\tab printf("%d\\n",n);\par
+\tab return 0;\par
+\}\par
+Ans:Number of elemenets are: 5\par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question:2(find the error)\fs32\par
+\b0\fs22 #include <stdio.h>\par
+#define MAX(x,y) ((x<y)?x:y)\par
+int main()\par
+\{\par
+\tab int a,b,max;\par
+\tab printf("Enter first number: ");\par
+\tab scanf("%d",a);\par
+\tab printf("Enter second number: ");\par
+\tab scanf("%d",b);\tab\par
+\par
+\tab max=MAX(a,b);\par
+\tab printf("Maximum number is: %d\\n",max);\par
+\tab return 0;\par
+\}\par
+\b Answer: \b0\par
+#include <stdio.h>\par
+#define MAX(x,y) (\b (x>y)?\b0 x:y)\par
+int main()\par
+\{\par
+\tab int a,b,max;\par
+\tab printf("Enter first number: ");\par
+\tab scanf("%d\b ",&a\b0 );\par
+\tab printf("Enter second number: ");\par
+\tab scanf("%d\b ",&b);\b0\tab\par
+\par
+\tab max=MAX(a,b);\par
+\tab printf("Maximum number is: %d\\n",max);\par
+\}\par
+\b error msg:Segmentation fault\par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question 3 (wht's the output)(mcq)\b0\par
+#include <stdio.h>\par
+void solve() \{\par
+    int a[] = \{1, 2, 3, 4, 5\};\par
+    int sum = 0;\par
+    for(int i = 0; i < 5; i++) \{\par
+        if(i % 2 == 0) \{\par
+            sum += *(a + i);\par
+        \}\par
+        else \{\par
+            sum -= *(a + i);\par
+        \}\par
+    \}\par
+    printf("%d", sum);\par
+\}\par
+int main() \{\par
+\tab solve();\par
+\tab return 0;\par
+\}\par
+\b Answer : 3\par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question(MCQ)4\b0\par
+#include <stdio.h>\par
+void solve() \{\par
+    int first = 10, second = 20;\par
+    int third = first + second;\par
+    \{\par
+        int third = second - first;\par
+        printf("%d ", third);\par
+    \}\par
+    printf("%d", third);\par
+\}\par
+int main() \{\par
+\tab solve();\par
+\tab return 0;\par
+\}\par
+option:\par
+10 10\par
+30 10 \par
+10 30 \par
+30 30 \par
+\b Answer: 10 30\par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question 5(output)\par
+\b0 #include <stdio.h>\par
+void solve() \{\par
+    int a = 10;\par
+    int res = a++ + ++a + a++ + ++a;\par
+    printf("%d", res);\par
+\}\par
+int main() \{\par
+\tab solve();\par
+\tab return 0;\par
+\}\par
+\b answer: 48\par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question 6(OUTPUT)\b0\par
+#include <stdio.h>\par
+\par
+int main() \{\par
+int x = printf(" Hello ");\par
+printf(" %d", x);\par
+\}\line\line\b Answer: 7 \par
+note: (%d ) give you the number of character in the string\par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 8(output)\par
+\b0 #include <stdio.h>\par
+#define VAL 3 * (2 + 6)\par
+int main() \{\par
+\tab int a = 10 + VAL;\par
+    printf("%d", a);\par
+\}\par
+\b Answer:34\b0\par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question:8(output)\b0\par
+#include <stdio.h>\par
+void solve() \{\par
+    char ch[10] = "abcdefghij";\par
+    int ans = 0;\par
+    for(int i = 0; i < 10; i++) \{\par
+        ans += (ch[i] - 'a');\par
+    \}\par
+    printf("%d", ans);\par
+\}\par
+int main() \{\par
+    solve();\par
+\tab return 0;\par
+\}\par
+\par
+\b Answer: 45\b0\par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question:9(output)\par
+\b0 #include <stdio.h>\par
+int main() \{\par
+   bool ok = false;\par
+    printf(ok ? "YES" : "NO");\par
+\}\par
+\b Answer: Compilation Error\b0\par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question:10(output)\b0\par
+#include <stdio.h>\par
+\par
+int main() \{\par
+    int ch = 1;\par
+    switch(ch) \{\par
+        case 1: printf("1 ");\par
+        case 2: printf("2 ");\par
+        case 3: printf("3 ");\par
+        default: printf("None");\par
+    \}\par
+\}\par
+\b Answer: 2 3 None \par
+Note: (because no break point in case)\b0\par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 11(output)\b0\par
+#include <stdio.h>\par
+int main() \{\par
+    int x = 1, y = 2;\par
+    printf(x > y ? "Greater" : x == y ? "Equal" : "Lesser");\par
+\}\b\par
+Answer: lesser\par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 12(output)\par
+\b0 #include <stdio.h>\par
+int main() \{\par
+    int n = 24;\par
+    int l = 0, r = 100, ans = n;\par
+    while(l <= r) \{\par
+        int mid = (l + r) / 2;\par
+        if(mid * mid <= n) \{\par
+            ans = mid;\par
+            l = mid + 1;\par
+        \}\par
+        else \{\par
+            r = mid - 1;\par
+        \}\par
+    \}\par
+    printf("%d", ans);\par
+\}\par
+\b Answer: 4\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question 13\par
+\b0 #include <stdio.h>\par
+int main() \{\par
+    int x = 2;\par
+    printf("%d", (x << 1) + (x >> 1));\par
+\}\par
+\b Answer: 5\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 14(error)\par
+\b0 #include <stdio.h>  \par
+int main()  \par
+\{  \par
+    int a=2;  \par
+    int b=2/0;  \par
+    printf("The value of b is : %d", b);  \par
+    return 0;  \par
+\}  \par
+\b error: Floating point exception\b0\par
+\b Answer: \par
+\b0 #include <stdio.h>\par
+int main() \{\par
+    int a = 2;\par
+    int b;\par
+    // Check if the denominator is zero\par
+    if (a != 0) \{\par
+        b = 2 / a;\par
+        printf("The value of b is: %d", b);\par
+    \} else \{\par
+        printf("Division by zero is not allowed.");\par
+    \}\par
+    return 0;\par
+\}\par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question : 15(error)\par
+\b0 #include <stdio.h>  \par
+int \b Main()  \b0\par
+\{  \par
+    int a=78;  \par
+    printf("The value of a is : %d", a);  \par
+    return 0;  \par
+\}  \par
+\b error: ld returned 1 exit status\par
+Answer:\par
+\b0 #include <stdio.h>  \par
+int \b main()  \b0\par
+\{  \par
+    int a = 78;  \par
+    printf("The value of a is : %d", a);  \par
+    return 0;  \par
+\}  \par
++------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 16 (output)\par
+\b0 // C program for implementation of Bubble sort \par
+#include <stdio.h> \par
+\par
+// Swap function \par
+void swap(int* arr, int i, int j) \par
+\{ \par
+\tab int temp = arr[i]; \par
+\tab arr[i] = arr[j]; \par
+\tab arr[j] = temp; \par
+\} \par
+\par
+// A function to implement bubble sort \par
+void bubbleSort(int arr[], int n) \par
+\{ \par
+\tab int i, j; \par
+\tab for (i = 0; i < n - 1; i++) \par
+\par
+\tab\tab // Last i elements are already \par
+\tab\tab // in place \par
+\tab\tab for (j = 0; j < n - i - 1; j++) \par
+\tab\tab if (arr[j] > arr[j + 1]) \par
+\tab\tab swap(arr, j, j + 1); \par
+\} \par
+// Function to print an array \par
+void printArray(int arr[], int size) \par
+\{ \par
+\tab int i; \par
+\tab for (i = 0; i < size; i++) \par
+\tab\tab printf("%d ", arr[i]); \par
+\tab printf("\\n"); \par
+\} \par
+\par
+// Driver code \par
+int main() \par
+\{ \par
+\tab int arr[] = \{ 5, 1, 4, 2, 8 \}; \par
+\tab int N = sizeof(arr) / sizeof(arr[0]); \par
+\tab bubbleSort(arr, N); \par
+\tab printf("Answer: "); \par
+\tab printArray(arr, N); \par
+\tab return 0; \par
+\}\par
+\b Answer:  Sorted array: 1 2 4 5 8 \par
+\b0 +------------------------------------------------------------------------------------------------------------------------\par
+\b Question 17\par
+\b0 #include<stdio.h>\par
+void f() \par
+\{ \par
+   static int i;\par
+   ++i; \par
+   printf("%d", i); \par
+\}\par
+main()\par
+\{ \par
+   f(); \par
+   f(); \par
+   f(); \par
+\}\par
+\b Answer: 1 2 3\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question 18 (output)\b0\par
+#include<stdio.h>\par
+main()\par
+\{\par
+   printf("%d",strcmp("strcmp()","strcmp()"));\par
+\}\par
+\b Answer : 0\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 19(output)\tab\par
+What will be the final values of i and j in the following C code?\par
+\b0 #include <stdio.h>\par
+int x = 0;\par
+int f()\par
+\{\par
+    if (x == 0)\par
+        return x + 1;\par
+    else\par
+        return x - 1;\par
+\}\par
+int g()\par
+\{\par
+    return x++;\par
+\}\par
+int main()\par
+\{\par
+    int i = (f() + g()) | g(); \par
+    int j = g() | (f() + g()); \par
+\}\par
+\b Answer:  i = 1, j = 7\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question:20 (output) \tab\par
+how would be output patten gonna be.\par
+\b0 #include <stdio.h>  \par
+int main()  \par
+\{  \par
+    int n,m=1;  \par
+    printf("Enter the number of rows");  \par
+    scanf("%d",&n);  \par
+    for(int i=n;i>=1;i--)  \par
+    \{  \par
+      for(int j=1;j<=i;j++)  \par
+      \{  \par
+         if(j==1 || j==i || i==n)  \par
+          printf("*");  \par
+          else  \par
+          printf(" ");  \par
+      \}  \par
+      printf("\\n");  \par
+    \}  \par
+    return 0;  \par
+\}  \b\par
+Answer:  \par
+*****\par
+*    *\par
+*  *\par
+**\par
+*\par
+\b0 +-------------------------------------------------------------------------------------------------------------------------\par
+\b Question:21 (output)\par
+\b0 #include<stdio.h>\par
+main()\par
+\{ \par
+   union abc \{\par
+      int x;\par
+      char ch;\par
+   \}var;\par
+   var.ch = 'A';\par
+   printf("%d", var.x);\par
+\}\par
+\b Answer:  65\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 22\par
+\b0 #include<stdio.h>\par
+main()\par
+\{\par
+   int i = 1;\par
+   Charminar:\par
+   printf("%d ",i++);\par
+   if(i==3) break;\par
+   if(i<=5) goto Charminar;\par
+\} \b\tab\par
+Answer:  Compile error\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 23(error)\par
+\b0 #include<stdio.h>\par
+main()\par
+\{\par
+   int i = 1;\par
+   Charminar:\par
+   printf("%d ",i++);\par
+   if(i==3) break;\par
+   if(i<=5) goto Charminar;\par
+\} \b\tab\par
+Answer:  \par
+#include <stdio.h>\par
+int main() \{\par
+    int i = 1;\par
+    Charminar:\par
+    printf("%d ", i++);\par
+    if (i == 3)\par
+        goto End;  // Label for breaking out of the loop\par
+    if (i <= 5)\par
+        goto Charminar;\par
+\par
+    End:\par
+    return 0;\par
+\}\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 24(mcq)\par
+\b0  Function fopen() with the mode "r+" tries to open the file for _______.\par
+\par
+A - reading and writing\par
+B - reading and adding new content\par
+C - only for reading\par
+D - it works only for directories\tab\par
+\b Answer:  A\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 25(mcq)\par
+\b0 50 - First operating system designed using a C programming language.\par
+A - DOS\par
+B - Windows\par
+C - UNIX\par
+D - Mac\tab\par
+\b Answer:  C\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 26(mcq)\par
+\b0 #include<stdio.h>\par
+main() \par
+\{ \par
+   char s[]="hello", t[]="hello";\par
+   if(s==t)\{\par
+   printf("eqaul strings");\par
+\}\par
+\}\par
+\par
+A - Equal strings\par
+B - Unequal strings\par
+C - No output\par
+D -Compilation error\par
+\b Answer:   C\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 27(mcq)\par
+\b0 #include<stdio.h>\par
+void f() \par
+\{\par
+    printf(\ldblquote Hello\\n\rdblquote );\par
+\}\par
+main() \par
+\{\par
+ ;\par
+\}\par
+\par
+A - No output\par
+B - Error, as the function is not called.\par
+C - Error, as the function is defined without its declaration\par
+D -Error, as the main() function is left empty\b\tab\par
+Answer:  A\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 28(output)\line\par
+\b0 #include <stdio.h>\par
+int main() \{\par
+    int rows = 5;\par
+    for (int i = 1; i <= rows; ++i) \{\par
+        int value = (i % 2 == 1) ? 1 : 2; \par
+        for (int j = 1; j <= rows - i + 1; ++j) \{\par
+            printf("%d", value);\par
+            ++value;\par
+        \}\par
+        printf("\\n");\par
+    \}\par
+    return 0;\par
+\}\b\tab\par
+Answer:  \par
+12345\par
+2345\par
+123\par
+23\par
+1\par
+\b0 +-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 29(mcq)\par
+\b0 Which is valid C expression?\par
+a) int my_num = 100,000;\par
+b) int my_num = 100000;\par
+c) int my num = 1000;\par
+d) int $my_num = 10000;\b\tab\par
+Answer:  B\b0\par
++-------------------------------------------------------------------------------------------------------------------------\par
+\b Question: 30(mcq)\par
+\b0  Which of the following declaration is not supported by C language?\par
+a) String str;\par
+b) char *str;\par
+c) float str = 3e2;\par
+d) Both \ldblquote String str;\rdblquote  and \ldblquote float str = 3e2;\rdblquote\b\tab\par
+Answer:  A\b0\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 

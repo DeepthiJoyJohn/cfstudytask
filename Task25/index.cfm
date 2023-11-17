@@ -36,10 +36,10 @@
                 </div>
                 <div class="submitdiv"><br>
                     <button class="submitbtn" type="submit" name="submitbtn">Submit</button>
-                </div>
-                <!---<cfset delete=obj.cleardb()>--->  
+                </div>                
+                <cfinvoke component="cfstudytask/Components/tagCloud" method="cleardb">
                 <cfif StructKeyExists(form,"submitbtn")>
-                    <cfset local.obj = new cfstudytask.Components.tagCloud(#form.textarea#)>
+                    <cfset obj = new cfstudytask.Components.tagCloud(#form.textarea#)>
                     <cfoutput>
                         <table>
                             <tr>
@@ -49,15 +49,17 @@
                                 <td>Key(Word)</td>
                                 <td>Value(Occurence)</td>
                             </tr>
-                            <cfloop collection="#local.obj#" item="key"> 
+                            <cfloop collection="#obj#" item="key"> 
                                 <tr>
                                     <td>#key#</td>
-                                    <td>#local.obj[key]#</td>
+                                    <td>#obj[key]#</td>
                                 </tr>
                             </cfloop>
                         </table> 
                     </cfoutput>
-                    <cfset local.insertToDatabase=obj.insertToDatabase(#form.textarea#)>
+                    <cfinvoke component="cfstudytask/Components/tagCloud" method="insertToDatabase">                        
+                        <cfinvokeargument name="textarea" value="#form.textarea#">
+                    </cfinvoke>
                     
                 </cfif> 
             </form> 

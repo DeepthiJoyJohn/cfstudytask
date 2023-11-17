@@ -8,9 +8,9 @@
             WHERE username=<cfqueryparam value="#arguments.username#" cfsqltype="cf_sql_varchar">
 			AND pwd=<cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
         </cfquery>
-		<cfif (checklogin.recordCount EQ 1) AND ((checklogin.role EQ "admin") OR (checklogin.role EQ "editor"))>
+		<cfif (checklogin.recordCount EQ 1) AND ((checklogin.role EQ "1001") OR (checklogin.role EQ "1002"))>
 			<cfset local.result="admin">
-		<cfelseif ((checklogin.recordCount EQ 1) AND (checklogin.role EQ "user"))>
+		<cfelseif ((checklogin.recordCount EQ 1) AND (checklogin.role EQ "1003"))>
 			<cfset local.result="user">
 		<cfelse>
 			<cfset local.result="Wrong Credentials">

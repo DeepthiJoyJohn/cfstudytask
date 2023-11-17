@@ -10,10 +10,18 @@
         2    5    8
         3    6    9
     </h3>
-    <form>
-        <cfset task16obj = createObject("component", "cfstudytask.Components.task16")>
-        <cfset res = task16obj.task16()>
-        <cfoutput>#res#</cfoutput>
+    <form>       
+        <cfoutput>
+            <table>
+                <cfloop from="1" to="3" index="i">
+                    <tr>
+                        <td>#i#</td>
+                        <td>#i+3#</td>
+                        <td>#i+6#</td>
+                    </tr>
+                </cfloop>
+            </table>
+        </cfoutput>
     </form>
     </body>
 </html>
