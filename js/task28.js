@@ -3,7 +3,8 @@ function removepage(pageid) {
 
     $.ajax({
         type: "POST",
-        url: '../Components/task28.cfc?method=remove&pageid='+pageid,
+        url: '../Components/task28.cfc?method=remove',
+        data:{pageid:pageid},
         cache: false,
         success: function(data){          
           alert("Item Removed");
@@ -25,7 +26,8 @@ function addpage() {
     }
     $.ajax({
         type: "POST",
-        url: '../Components/task28.cfc?method=addpage&pagename='+pagename+'&pagedesc='+pagedesc+'&pageid='+pageid,
+        url: '../Components/task28.cfc?method=addpage',
+        data: {pagename : pagename,pagedesc : pagedesc,pageid:pageid},
         cache: false,
         success: function(data){          
           alert("Item Added Successfully");
@@ -45,7 +47,8 @@ function extractStringFromWDDX(wddxData) {
 function editpage(pageid) {
     $.ajax({
         type: "POST",
-        url: '../Components/task28.cfc?method=getpage&pageid='+pageid,
+        url: '../Components/task28.cfc?method=getpage',
+        data: {pageid : pageid},
         cache: false,
         success: function(data){          
          var pagename=extractStringFromWDDX(data);
